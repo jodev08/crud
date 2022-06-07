@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
 import ConnectModal from "./components/ConnectModal";
-import Accueil from "./pages/Accueil";
-import Login from "./components/Login";
-import SignUp from "./components/SignUp";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "./utils/firebase.config";
 import CreatePost from "./components/CreatePost";
+import "./styles/index.scss";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -16,17 +13,27 @@ const App = () => {
     setUser(currentUser);
   });
 
-  return (
-    <Routes>
-      <Route
-        path="/connectmodal"
-        element={user ? <CreatePost></CreatePost> : <ConnectModal />}
-      ></Route>
+  //fonction deconnexion
 
-      <Route path="/" element={<Accueil />}></Route>
-      <Route path="/login" element={<Login />}></Route>
-      <Route path="signup" element={<SignUp />}></Route>
-    </Routes>
+  const handleLogout = async () => {
+    await signOut(auth);
+  };
+
+  return (
+    <div>
+      <div>
+        {user && (
+          <div className="message">
+            <span>{user?.displayName[0]}</span>
+            <h4>{user?.displayName}</h4>
+            <button onClick={() => handleLogout()}>
+              <i className="fa-solid fa-arrow-right-from-bracket"></i>
+            </button>
+          </div>
+        )}
+        {user ? <CreatePost /> : <ConnectModal />}
+      </div>
+    </div>
   );
 };
 

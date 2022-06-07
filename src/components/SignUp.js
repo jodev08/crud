@@ -21,6 +21,7 @@ const SignUp = () => {
           });
 
           console.log(userAuth);
+          window.location.reload();
         });
     } catch (error) {
       console.log(error.message);

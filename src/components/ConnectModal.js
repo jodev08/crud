@@ -2,20 +2,24 @@ import React, { useState } from "react";
 import SignUp from "./SignUp";
 import Login from "./Login";
 
+import "./connectModal.css";
+
 const ConnectModal = () => {
   const [signup, setSignUp] = useState(false);
 
   return (
     <div>
-      <div>
+      <div className="modalGlobal">
         <button
-          style={{ background: signup ? "rgb(28,28,28)" : "rgb(83,83,83)" }}
+          style={{ background: signup ? "rgb(0,191,255)" : "rgb(255,255,255)" }}
           onClick={() => setSignUp(true)}
         >
           s'inscrire
         </button>
         <button
-          style={{ background: signup ? "rgb(83,83,83)" : "rgb(28,28,28)" }}
+          style={{
+            background: signup ? "rgb(255,255,255)" : "rgb(0,191,255)",
+          }}
           onClick={() => setSignUp(false)}
         >
           se connecter

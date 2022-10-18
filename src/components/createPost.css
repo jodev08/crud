@@ -1,0 +1,30 @@
+.create-global{
+    
+    height: 100px;
+    padding: 20px;
+    width: 320px;
+    border-radius: 20px;
+    line-height: 3em;
+   
+    
+    
+}
+
+textarea{
+    height: 200px;
+    padding: 20px;
+    width: 320px;
+    border-radius: 20px;
+    line-height: 3em;
+   
+   
+   
+}
+
+input{
+    cursor: pointer;
+    
+}
+
+
+

@@ -2,6 +2,8 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useRef, useState } from "react";
 import { auth } from "../utils/firebase.config";
 
+import "./login.css";
+
 const Login = () => {
   const loginEmail = useRef();
   const loginPassword = useRef();
@@ -22,8 +24,8 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h3>se connecter</h3>
+    <div className="login-container">
+      <h3>Se connecter</h3>
 
       <form onSubmit={(e) => handleLogin(e)}>
         <input type="email" placeholder="Email" required ref={loginEmail} />
@@ -33,7 +35,7 @@ const Login = () => {
           required
           ref={loginPassword}
         />
-        <input type="submit" value="Se connecter" />
+        <input type="submit" className="btn2" value="Se connecter" />
       </form>
     </div>
   );

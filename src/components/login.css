@@ -1,0 +1,42 @@
+
+input{
+    
+    border-radius: 50px;
+    border: 0;
+    box-sizing: border-box;
+    color: black;
+    width: 100%;
+    font-size: 18px;
+   
+    height: 100%;
+    
+    padding: 4px 20px 0;
+
+    
+    
+
+
+    
+    
+  }
+
+  .login-container{
+    background-color: #15172b;
+   
+    box-sizing: border-box;
+    height: 500px;
+    padding: 20px;
+    width: 320px;
+    border-radius: 20px;
+    line-height: 3em;
+  }
+
+  .btn2{
+    background-color: 	#00BFFF;
+    cursor: pointer;
+}
+
+.btn2:hover{
+    background-color: 	#1E90FF;
+}
+

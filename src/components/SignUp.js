@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { auth } from "../utils/firebase.config";
+import "./signUp.css";
 
 const SignUp = () => {
   const registerEmail = useRef();
@@ -30,9 +31,8 @@ const SignUp = () => {
   /*-------------------------------*/
   return (
     <div className="signup-container">
+      <h3>s'inscrire</h3>
       <div className="signup">
-        <h3>s'inscrire</h3>
-
         <form onSubmit={(e) => handleRegister(e)}>
           <input
             type="text"
@@ -52,7 +52,12 @@ const SignUp = () => {
             required
             ref={registerPassword}
           ></input>
-          <input type="submit" value="Valdider l'inscription"></input>
+
+          <input
+            type="submit"
+            className="btn"
+            value="Valider l'inscription"
+          ></input>
         </form>
       </div>
     </div>
